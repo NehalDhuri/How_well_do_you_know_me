@@ -4,71 +4,39 @@ var score = 0
 var highScorer = [
 {
   name: "Nehal",
-  score: 6
+  score: 5
 },
 {
   name: "Kaustubh",
-  score: 6
+  score: 4
 },
-{
-  name: "Tanmay",
-  score: 5
-}
 ];
 
 var questions = [
       {
-        question: `What is my age?
-  a: 19
-  b: 20
-  c: 21
-  d: 22\n` ,
-        answer: "b"
+        question: "Where do I live? ",
+        answer: "Satose"
+      },
+      {
+        question: `What is my age? ` ,
+        answer: "20"
       }, 
       {
-        question: `Who is my favorite super hero?
-  a: The Incredible Hulk
-  b: Iron Man
-  c: Super Man
-  d: Bat Man\n`,
-        answer: "b"
+        question: `Who is my favorite super hero? `,
+        answer: "Iron Man"
       },
       {
-        question: `What is my favorite color?
-  a: Red
-  b: Black
-  c: White
-  d: All of the above\n`,
-        answer: "d"
+        question: `What is my favorite color? `,
+        answer: "Red"
       },
       {
-        question: `Which element used in the arc reactor was poisoning Tony?
-  a: Gadolinium
-  b: Promethium
-  c: Rhodium
-  d: Palladium\n`,
-        answer: "d"
-      },
-      {
-        question: `What was the name of the radiation that Steve Rogers was subjected to that transformed him into a super soldier?
-  a: Delta ray
-  b: Zeta ray
-  c: Vita ray
-  d: Theta ray\n`,
-        answer: "c"
-      },
-      {
-        question: `Which Avenger appears briefly in the movie Thor?
-  a: Black Widow
-  b: Bruce Banner
-  c: Clint Barton
-  d: Tony Stark\n`,
-        answer: "c"
-      },
+        question: `What is my nick name? `,
+        answer: "Banty"
+      }
       ];
 
 var userName = readlineSync.question("Enter Your Name: ");
-console.log("Welcome" + userName + " To Marvel Quiz ");
+console.log("Welcome" + userName + " to DO YOU KNOW Nehal?");
 for(var i=0; i<questions.length; i++)
 {
   play(questions[i].question,questions[i].answer);
@@ -77,7 +45,7 @@ for(var i=0; i<questions.length; i++)
 function play(question, answer)
 {
   var givenAns = readlineSync.question(question);
-  if(answer === givenAns){
+  if(answer.toUpperCase() === givenAns.toUpperCase()){
     console.log("Yey, You are right!");
     score = score + 1;
   }
